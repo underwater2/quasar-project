@@ -18,7 +18,9 @@
         <div class="q-gutter-x-sm">
           <q-btn flat rounded text-color="white" label="Our story" />
           <q-btn flat rounded text-color="white" label="Membership" />
-          <q-btn flat rounded text-color="white" label="Sign in" />
+          <RouterLink to="/signin">
+            <q-btn flat rounded text-color="white" label="Sign in" />
+          </RouterLink>
           <q-btn
             @click="$store.commit('toggleDialogState')"
             unelevated
@@ -53,6 +55,7 @@ import { ref, computed } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import DialogComp from "components/DialogComp.vue";
 import { useStore } from "vuex";
+import { RouterLink } from "vue-router";
 
 const store = useStore();
 const dialogState = computed(() => store.state.moduleA.dialogState);

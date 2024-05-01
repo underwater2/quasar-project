@@ -1,9 +1,8 @@
 <template>
   <div class="q-pa-md q-gutter-sm">
     <q-dialog v-model="dialogState">
-      <q-card>
+      <q-card class="my-card">
         <q-card-section class="row items-center q-pb-none">
-          <div class="text-h6">Close icon</div>
           <q-space />
           <q-btn
             @click="toggleDialogState"
@@ -14,12 +13,22 @@
             v-close-popup
           />
         </q-card-section>
-
         <q-card-section>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-          repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis
-          perferendis totam, ea at omnis vel numquam exercitationem aut, natus
-          minima, porro labore.
+          <div class="text-h5 text-center">Join Medium.</div>
+        </q-card-section>
+        <q-card-section>
+          <div class="row flex-center">
+            <q-btn
+              outline
+              rounded
+              label="Sign up with email"
+              icon="local_florist"
+            ></q-btn>
+          </div>
+        </q-card-section>
+        <q-card-section class="text-center">
+          Already have an account?
+          <RouterLink to="/signin">Sign in</RouterLink>
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -29,6 +38,7 @@
 <script>
 import { computed } from "vue";
 import { useStore } from "vuex";
+import { RouterLink } from "vue-router";
 
 export default {
   setup() {
@@ -44,3 +54,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.my-card {
+  width: 700px;
+  height: 700px;
+}
+</style>
