@@ -1,5 +1,23 @@
 <template>
-  <DialogComp />
+  <DialogComp>
+    <q-card-section>
+      <div class="text-h5 text-center">Join Medium.</div>
+    </q-card-section>
+    <q-card-section>
+      <div class="row flex-center">
+        <q-btn
+          outline
+          rounded
+          label="Sign up with email"
+          icon="local_florist"
+        ></q-btn>
+      </div>
+    </q-card-section>
+    <q-card-section class="text-center">
+      Already have an account?
+      <RouterLink to="/signin">Sign in</RouterLink>
+    </q-card-section>
+  </DialogComp>
 
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
