@@ -2,7 +2,9 @@ const routes = [
   {
     path: "/",
     component: () => import("layouts/MainLayout.vue"),
-    children: [{ path: "", component: () => import("pages/IndexPage.vue") }],
+    children: [
+      { path: "", component: () => import("src/pages/BoardPage.vue") },
+    ],
   },
   {
     path: "/signin",
@@ -10,8 +12,12 @@ const routes = [
   },
   {
     path: "/post/:id",
-    component: () => import("src/pages/BoardView.vue"),
+    component: () => import("src/pages/PostReadView.vue"),
     props: true,
+  },
+  {
+    path: "/post/create",
+    component: () => import("src/pages/PostCreateView.vue"),
   },
 
   // Always leave this as last one,
